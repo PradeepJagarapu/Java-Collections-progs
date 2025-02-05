@@ -46,5 +46,35 @@ public class Main {
 	        }
 	        
 	        System.out.println(school.getTeachers());
+	        
+	        SchoolClass bio=new SchoolClass("Biology", t[0]);
+	        SchoolClass math=new SchoolClass("Mathematics", t[1]);
+	        SchoolClass phy=new SchoolClass("Physics", t[3]);
+	        
+	        school.addClass(phy);
+	        school.addClass(bio);
+	        school.addClass(math);
+	        
+	        for(int i=0;i<7;i++) {
+	        	bio.addStudent(s[(int)(Math.random()*14)]);
+	        	math.addStudent(s[(int)(Math.random()*14)]);
+	        	phy.addStudent(s[(int)(Math.random()*14)]);
+	        }
+	        
+	        
+	        
+	        System.out.println("School information:");
+	        System.out.println("No.of classes:"+school.getClasses().size());
+	        System.out.println("No.of Teachers:"+school.getTeachers().size());
+	        System.out.println("No.of Students:"+school.getStudents().size());
+	        
+	        for(SchoolClass sc:school.getClasses()) {
+	        	System.out.println("Class:"+sc.getClassName());
+	        	System.out.println("Teacher:"+sc.getTeacher().getName());
+	        	System.out.println("Students:"+sc.getStudents());
+	        }
+	        
+
+	        
 }
 }
